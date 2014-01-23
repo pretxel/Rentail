@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  nombre: MyString
+  monto: MyString
+  fecha: 2014-01-20
+
+two:
+  id: 1
+  nombre: MyString
+  monto: MyString
+  fecha: 2014-01-20

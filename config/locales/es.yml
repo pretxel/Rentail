@@ -1,0 +1,9 @@
+es:
+  hello: "Hola"
+  deposit: "Deposito"
+  logout: "Cerrar Sesión"
+  signin: "Iniciar Sesión"
+  pass_instr1: "Se mando una peticion para realizar cambio de contraseña, accede al siguiente link."
+  pass_instr2: "Si no hiciste la petición, ignora este correo."
+  pass_instr3: "Tu contraseña no se cambiará a menos que accedas al link"
+  changePass: "Cambiar Contraseña"

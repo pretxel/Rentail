@@ -1,0 +1,31 @@
+<%= form_for @deposit, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+  <div class="control-group">
+    <%= f.label :nombre, :class => 'control-label'  %>
+    <div class="controls">
+      <%= f.text_field :nombre, :class => 'text_field', :required=> true%>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :monto, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :monto, :class => 'text_field',:type=>'number' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :fecha, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fecha, :class => 'text_field',:type=>'date'  %>
+    </div>
+  </div>
+ <div class="control-group">
+    <%= f.label :photo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.file_field :photo, :class => 'text_field',:required => 'true', :accept => 'image/*'   %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit nil, :value => t("helpers.links.create"),:class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                deposits_path, :class => 'btn' %>
+  </div>
+<% end %>
