@@ -8,13 +8,13 @@
   <div class="control-group">
     <%= f.label :monto, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :monto, :class => 'text_field',:type=>'number' %>
+      <%= f.text_field :monto, :class => 'text_field',:type=>'number', :required=> true %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :fecha, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :fecha, :class => 'text_field',:type=>'date'  %>
+      <%= f.text_field :fecha, :class => 'text_field',:type=>'date', :required=> true  %>
     </div>
   </div>
  <div class="control-group">
