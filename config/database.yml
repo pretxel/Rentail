@@ -28,6 +28,11 @@ test:
 
 production:
   adapter: postgresql
-  database: my_database_production
-  pool: 5
-  timeout: 5000
+encoding: unicode
+pool: 5
+database: d3rc179eqoalc0
+username: rvzeyeclcwizcc
+password: HGAHAvLkD2NQfSJDrrAu83qpUQ
+host: ec2-54-204-21-178.compute-1.amazonaws.com
+port: 5432
+

@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140120222945) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "deposits", force: true do |t|
+  create_table 'deposits', force: true do |t|
     t.string   "nombre"
     t.string   "monto"
     t.date     "fecha"
