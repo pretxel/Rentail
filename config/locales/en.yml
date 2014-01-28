@@ -28,3 +28,4 @@ en:
   pass_instr2: "If you didn't request this, please ignore this email."
   pass_instr3: "Your password won't change until you access the link above and create a new one."
   changePass: "Change my password"
+  description_deposit: ""

@@ -8,9 +8,10 @@ es:
       destroy: "Borrar"
       new: "Nuevo"
       edit: "Editar"
-      create: "Crear Deposito"
+      create: "Enviar"
+      show: "Ver"
     titles:
       edit: "Editar Deposito"
       save: "Guardar Deposito"
-      new: "Nuevo Deposito"
+      new: "Agregar Deposito"
       delete: "Borrar Deposito"

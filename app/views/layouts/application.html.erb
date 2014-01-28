@@ -38,22 +38,38 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+          <a class="btn btn-navbar" data-target=".navbar-inverse-collapse" data-toggle="collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="/">Rentail</a>
-          <div class="container nav-collapse">
-            <ul class="nav navbar-nav">
+          <div class="nav-collapse collapse navbar-inverse-collapse">
+            <ul class="nav">
               <li><%= link_to t("deposit"), "/deposits"  %></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+
+            <form class="navbar-search pull-left">
+              <input type="search" class="search-query span2" placeholder="Buscar">  
+            </form>
+
+            <ul class="nav pull-right">
               <% if user_signed_in? %>
-                <li><%= link_to t("logout") , destroy_user_session_path, method: :delete  %></li>
+                <li>
+                  <div class="btn-group">
+  <a class="btn btn-info" href="#"><i class="icon-user icon-white"></i> User</a>
+  <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li><a href="#"><i class="icon-pencil"></i> Editar</a></li>
+    <li class="divider"></li>
+    <li><a data-method="delete" href="/users/sign_out"><i class="icon-off"></i> Cerrar Sesión</a></li>
+  </ul>
+</div>
+               </li>
+                <!-- <li><%= link_to t("logout") , destroy_user_session_path, method: :delete  %></li> -->
               <% else %>
               <li><%= link_to t("signin") , new_user_session_path  %></li>
               <% end %>
@@ -62,13 +78,16 @@
         </div>
       </div>
     </div>
-
-
     <div class="container">
         <div class="row">
-          <div class="span9">
+          <div class="span2">
+          </div>
+
+          <div class="span8">
             <%= bootstrap_flash %>
             <%= yield %>
+          </div>
+          <div class="span2">
           </div>
           <!-- <div class="span3">
             <div class="well sidebar-nav">

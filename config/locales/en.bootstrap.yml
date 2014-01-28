@@ -12,6 +12,7 @@ en:
       new: "New"
       edit: "Edit"
       create: "Create Deposit"
+      show: "Show"
     titles:
       edit: "Edit %{model}"
       save: "Save %{model}"

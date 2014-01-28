@@ -7,3 +7,4 @@ es:
   pass_instr2: "Si no hiciste la petición, ignora este correo."
   pass_instr3: "Tu contraseña no se cambiará a menos que accedas al link"
   changePass: "Cambiar Contraseña"
+  description_deposit: ""

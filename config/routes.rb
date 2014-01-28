@@ -1,6 +1,7 @@
 Rentail::Application.routes.draw do
   devise_for :users
   get "welcome/index"
+
   resources :roles
 
   resources :users
@@ -12,6 +13,9 @@ Rentail::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+  #get 'deposits/next/:id' => 'deposits#next'
+   get 'deposits/?pag=:pag' => 'deposits#index'  
+   
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

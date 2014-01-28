@@ -1,0 +1,15 @@
+Mon, 27 Jan 2014 18:02:56 -0600
+README.rdoc	Mon, 27 Jan 2014 18:02:34 -0600
+app/controllers/application_controller.rb	Mon, 20 Jan 2014 10:51:41 -0600
+app/controllers/deposits_controller.rb	Mon, 27 Jan 2014 17:01:52 -0600
+app/controllers/roles_controller.rb	Mon, 20 Jan 2014 00:13:00 -0600
+app/controllers/users_controller.rb	Mon, 20 Jan 2014 00:12:20 -0600
+app/controllers/welcome_controller.rb	Mon, 20 Jan 2014 00:13:38 -0600
+app/helpers/application_helper.rb	Sun, 19 Jan 2014 23:58:11 -0600
+app/helpers/deposits_helper.rb	Mon, 20 Jan 2014 00:11:26 -0600
+app/helpers/roles_helper.rb	Mon, 20 Jan 2014 00:13:00 -0600
+app/helpers/users_helper.rb	Mon, 20 Jan 2014 00:12:20 -0600
+app/helpers/welcome_helper.rb	Mon, 20 Jan 2014 00:13:38 -0600
+app/models/deposit.rb	Tue, 21 Jan 2014 13:59:10 -0600
+app/models/role.rb	Mon, 20 Jan 2014 00:13:00 -0600
+app/models/user.rb	Mon, 20 Jan 2014 01:17:52 -0600
