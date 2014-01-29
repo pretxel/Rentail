@@ -11,9 +11,13 @@
 
   development:
   adapter: postgresql
-  database: my_database_dev
+  encoding: unicode
   pool: 5
-  timeout: 5000
+  database: my_database_dev
+  username: postgres
+  password: root
+  host: localhost
+  port: 5432
 
 # development:
 #   adapter: mysql2
