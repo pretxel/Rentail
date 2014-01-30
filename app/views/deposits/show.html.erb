@@ -10,9 +10,23 @@
   <dd><%= @deposit.monto %></dd>
   <dt><strong><%= model_class.human_attribute_name(:fecha) %>:</strong></dt>
   <dd><%= @deposit.fecha %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:foto) %>:</strong></dt>
-  <dd><%= image_tag @deposit.photo_path %></dd>
 </dl>
+
+
+<ul class="thumbnails">
+              <li class="span4">
+                <div class="thumbnail">
+                  <%= image_tag @deposit.photo_path %>
+                  <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p><a href="#" class="btn btn-primary">Action</a> <a href="#" class="btn">Action</a></p>
+                  </div>
+                </div>
+              </li>
+              
+            </ul>
+
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
