@@ -10,11 +10,14 @@
   <dd><%= @deposit.monto %></dd>
   <dt><strong><%= model_class.human_attribute_name(:fecha) %>:</strong></dt>
   <dd><%= @deposit.fecha %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:foto) %>:</strong></dt>
+  <dd><%= image_tag @deposit.photo_path %></dd>
 </dl>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               deposits_path, :class => 'btn btn-warning'  %>
+
 
  <% if user_signed_in? %>
 

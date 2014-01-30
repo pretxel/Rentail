@@ -23,10 +23,10 @@
     adapter: postgresql
     encoding: unicode
     pool: 5
-    database: moviesst_rentailP
-    username: moviesst_rentail
-    password: rentail
-    host: box366.bluehost.com.
+    database: my_database_dev
+    username: postgres
+    password: root
+    host: localhost
     port: 5432
 
 # development:
