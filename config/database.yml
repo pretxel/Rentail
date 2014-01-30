@@ -9,15 +9,25 @@
 #   pool: 5
 #   timeout: 5000
 
+  # development:
+  #   adapter: postgresql
+  #   encoding: unicode
+  #   pool: 5
+  #   database: my_database_dev
+  #   username: postgres
+  #   password: root
+  #   host: localhost
+  #   port: 5432
+
   development:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  database: my_database_dev
-  username: postgres
-  password: root
-  host: localhost
-  port: 5432
+    adapter: postgresql
+    encoding: unicode
+    pool: 5
+    database: moviesst_rentailP
+    username: moviesst_rentail
+    password: rentail
+    host: box366.bluehost.com.
+    port: 5432
 
 # development:
 #   adapter: mysql2
@@ -36,13 +46,25 @@ test:
   pool: 5
   timeout: 5000
 
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: 5
+#   database: d3rc179eqoalc0
+#   username: rvzeyeclcwizcc
+#   password: HGAHAvLkD2NQfSJDrrAu83qpUQ
+#   host: ec2-54-204-21-178.compute-1.amazonaws.com
+#   port: 5432
+
 production:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  database: d3rc179eqoalc0
-  username: rvzeyeclcwizcc
-  password: HGAHAvLkD2NQfSJDrrAu83qpUQ
-  host: ec2-54-204-21-178.compute-1.amazonaws.com
-  port: 5432
+    adapter: postgresql
+    encoding: unicode
+    pool: 5
+    database: moviesst_rentailP
+    username: moviesst_rentail
+    password: rentail
+    host: box366.bluehost.com.
+    port: 5432
+
+
 
