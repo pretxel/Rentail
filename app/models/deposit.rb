@@ -1,8 +1,15 @@
+require 'net/ftp'
 class Deposit < ActiveRecord::Base
 	
 	validates_format_of :photo, :with => %r{\.(png|jpg|jpeg|bmp)$}i, :message => "Inserta una imagen", :on => :save, :multiline => true
 	FOTOS = File.join Rails.root, 'public', 'photo_store' 
 	after_save :guardar_foto
+
+
+	CONTENT_SERVER_DOMAIN_NAME = "ftp.moviesstar.biz"
+		CONTENT_SERVER_FTP_LOGIN = "moviesst"
+		CONTENT_SERVER_FTP_PASSWORD = "Zabvio2013#%!"
+		
 
 
 	def photo=(file_data)
@@ -34,6 +41,22 @@ class Deposit < ActiveRecord::Base
 		# logger.error "ERROR EN guardar_foto"
 		# end
 
+		
+ 
+ 
+		# Net::FTP.open(CONTENT_SERVER_DOMAIN_NAME, CONTENT_SERVER_FTP_LOGIN, CONTENT_SERVER_FTP_PASSWORD) do |ftp|
+		#   ftp.mkdir("/rails_apps") if !ftp.list("/").any?{|dir| dir.match(/\rails_apps$/)}
+		 
+		#   # create nested directory
+		#   # it does not create directory tree
+		#   # therefore, create "/root_level" before creating "/root_level/nested"
+		#   ipad_folder = ftp.list("/rails_apps")
+		#   ftp.mkdir("/rails_apps/store_images") if !ipad_folder.any?{|dir| dir.match(/\store_images$/)}
+		# end
+
+		
+	
+
 		if self.extension == "png" || self.extension == "jpg" || self.extension == "bmp"
 			logger.info "IMAGEN : #{self.extension}"
 			if @file_data
@@ -47,7 +70,12 @@ class Deposit < ActiveRecord::Base
 			logger.warn "No es una imagen"
 		end
 
-	
+		fileObject = File.new("#{photo_filename}", "r")
+
+			# upload files to nested directory
+		Net::FTP.open(CONTENT_SERVER_DOMAIN_NAME, CONTENT_SERVER_FTP_LOGIN, CONTENT_SERVER_FTP_PASSWORD) do |ftp|
+		  ftp.putbinaryfile(fileObject, "/rails_apps/store_images/#{File.basename(fileObject)}")
+		end
 		
 	end
 end
