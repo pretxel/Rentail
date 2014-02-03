@@ -21,11 +21,11 @@ test:
   pool: 5
   timeout: 5000
 
-production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+# production:
+#   adapter: sqlite3
+#   database: db/production.sqlite3
+#   pool: 5
+#   timeout: 5000
 
 
 
@@ -90,15 +90,15 @@ production:
 # #   pool: 5
 # #   timeout: 5000
 
-# production:
-#     adapter: postgresql
-#     encoding: unicode
-#     pool: 5
-#     database: moviesst_rentailP
-#     username: moviesst_rentail
-#     password: rentail
-#     host: box366.bluehost.com
-#     port: 5432
+production:
+    adapter: postgresql
+    encoding: unicode
+    pool: 5
+    database: moviesst_rentailP
+    username: moviesst_rentail
+    password: rentail
+    host: box366.bluehost.com
+    port: 5432
 
 
 
