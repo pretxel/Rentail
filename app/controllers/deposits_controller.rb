@@ -1,4 +1,4 @@
-encoding: utf-8
+# encoding: utf-8
 class DepositsController < ApplicationController
   before_action :set_deposit, only: [:show, :edit, :update, :destroy]
   before_action :set_pag, only: [:next, :index]
