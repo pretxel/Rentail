@@ -19,7 +19,7 @@ class DepositsController < ApplicationController
     if @deposits2.size % 5 != 0  
          @paginas += 1
     end
-    logger.info "Siguiente página : #{offs}"
+    logger.info "Siguiente pagina : #{offs}"
     logger.info "TAMAÑO lista : #{@paginas}"
 
 
