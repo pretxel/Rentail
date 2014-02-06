@@ -1,6 +1,6 @@
 es:
   hello: "Hola"
-  deposit: "Deposito"
+  deposit: "Comprobante"
   logout: "Cerrar Sesión"
   signin: "Iniciar Sesión"
   pass_instr1: "Se mando una peticion para realizar cambio de contraseña, accede al siguiente link."
@@ -8,3 +8,4 @@ es:
   pass_instr3: "Tu contraseña no se cambiará a menos que accedas al link"
   changePass: "Cambiar Contraseña"
   description_deposit: ""
+  deposit_created: "Comprobante creado exitosamente."

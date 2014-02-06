@@ -11,7 +11,7 @@ es:
       create: "Enviar"
       show: "Ver"
     titles:
-      edit: "Editar Deposito"
-      save: "Guardar Deposito"
-      new: "Agregar Deposito"
-      delete: "Borrar Deposito"
+      edit: "Editar Comprobante"
+      save: "Guardar Comprobante"
+      new: "Agregar Comprobante"
+      delete: "Borrar Comprobante"

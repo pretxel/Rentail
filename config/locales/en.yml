@@ -29,3 +29,4 @@ en:
   pass_instr3: "Your password won't change until you access the link above and create a new one."
   changePass: "Change my password"
   description_deposit: ""
+  deposit_created: "Comprobante creado"

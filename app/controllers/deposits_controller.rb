@@ -47,7 +47,7 @@ class DepositsController < ApplicationController
   
       respond_to do |format|
         if @deposit.save
-          format.html { redirect_to @deposit, notice: 'Deposit was successfully created.' }
+          format.html { redirect_to @deposit, notice: t("deposit_created") }
           format.json { render action: 'show', status: :created, location: @deposit }
         else
           format.html { render action: 'new' }

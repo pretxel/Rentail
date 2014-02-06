@@ -13,6 +13,7 @@ en:
       edit: "Edit"
       create: "Create Deposit"
       show: "Show"
+      nuevoDeposito: "New Comprobante"
     titles:
       edit: "Edit %{model}"
       save: "Save %{model}"
