@@ -1,6 +1,7 @@
 require 'net/ftp'
 class Deposit < ActiveRecord::Base
-	
+	validates :nombre, presence: true
+    validates :monto, presence: true
 	validates_format_of :photo, :with => %r{\.(png|jpg|jpeg|bmp)$}i, :message => "Inserta una imagen", :on => :save, :multiline => true
 	FOTOS = File.join Rails.root, 'public', 'photo_store' 
 	after_save :guardar_foto
