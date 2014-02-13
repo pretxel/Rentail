@@ -10,6 +10,7 @@ es:
       edit: "Editar"
       create: "Enviar"
       show: "Ver"
+      nuevoDeposito: "Nuevo Comprobante"
     titles:
       edit: "Editar Comprobante"
       save: "Guardar Comprobante"
