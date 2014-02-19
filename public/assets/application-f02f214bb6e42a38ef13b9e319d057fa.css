@@ -3627,14 +3627,14 @@ input[type="submit"].btn.btn-mini {
 }
 .navbar-inverse .navbar-inner {
   background-color: #1b1b1b;
-  background-image: -moz-linear-gradient(top, #C9B730, #C9B730);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#C9B730), to(#C9B730));
-  background-image: -webkit-linear-gradient(top, #C9B730, #C9B730);
-  background-image: -o-linear-gradient(top, #C9B730, #C9B730);
-  background-image: linear-gradient(to bottom, #C9B730, #C9B730);
+  background-image: -moz-linear-gradient(top, #222222, #111111);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+  background-image: -webkit-linear-gradient(top, #222222, #111111);
+  background-image: -o-linear-gradient(top, #222222, #111111);
+  background-image: linear-gradient(to bottom, #222222, #111111);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C9B730', endColorstr='#C9B730', GradientType=0);
-  border-color: #C9B730;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+  border-color: #252525;
 }
 .navbar-inverse .brand,
 .navbar-inverse .nav > li > a {
@@ -7363,6 +7363,90 @@ a .icon-flip-vertical:before {
 .pagination ul > li > span {
   color: black;
   background: #6ebbff;
+}
+.navbar-inverse .navbar-inner {
+  background-color: #1b1b1b;
+  background-image: -moz-linear-gradient(top, #c9b730, #c9b730);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c9b730), to(#c9b730));
+  background-image: -webkit-linear-gradient(top, #c9b730, #c9b730);
+  background-image: -o-linear-gradient(top, #c9b730, #c9b730);
+  background-image: linear-gradient(to bottom, #c9b730, #c9b730);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C9B730', endColorstr='#C9B730', GradientType=0);
+  border-color: #C9B730;
+}
+.navbar-inverse .brand {
+  color: #000000;
+}
+.navbar-inverse .navbar-text {
+  color: #000000;
+}
+.navbar-inverse .brand,
+.navbar-inverse .nav > li > a {
+  color: #000000;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.navbar-inverse .navbar-search .search-query {
+  color: #000000;
+  background-color: #AA9429;
+  border-color: #AA9429;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15);
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.navbar-inverse .brand:hover,
+.navbar-inverse .nav > li > a:hover,
+.navbar-inverse .brand:focus,
+.navbar-inverse .nav > li > a:focus {
+  color: #5C5C5C;
+}
+.btn-info {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #7552A1;
+  background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#7552a1), to(#7552a1));
+  background-image: -webkit-linear-gradient(top, #7552a1, #7552a1);
+  background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: linear-gradient(to bottom, #7552a1, #7552a1);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
+  border-color: #7552A1 #7552A1 #7552A1;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #2f96b4;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active,
+.btn-info.disabled,
+.btn-info[disabled] {
+  color: #ffffff;
+  background-color: #7552A1 ;
+  *background-color: #7552A1 ;
+}
+li {
+  line-height: 40px;
+}
+.navbar-search {
+  position: relative;
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.navbar .nav > li > a {
+  float: none;
+  padding: 5px 15px 5px;
+  color: #000000;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #000000;
 }
 body {
   background-color: #fff;
