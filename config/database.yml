@@ -95,8 +95,8 @@ production:
     encoding: unicode
     pool: 5
     database: moviesst_rentailP
-    username: moviesst_rentailProd
-    password: rentailProd
+    username: moviesst
+    password: Zabvio2013#%!
     host: box366.bluehost.com
     port: 5432
 
