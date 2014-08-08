@@ -84,21 +84,23 @@ test:
 # #   host: ec2-54-204-21-178.compute-1.amazonaws.com
 # #   port: 5432
 
-# # production:
-# #   adapter:sqlite3
-# #   database: db/production.sqlite3
-# #   pool: 5
-# #   timeout: 5000
-
 production:
-    adapter: postgresql
-    encoding: unicode
-    pool: 5
-    database: moviesst_rentailP
-    username: moviesst
-    password: Zabvio2013#%!
-    host: box366.bluehost.com
-    port: 5432
+  adapter:sqlite3
+  database: db/production.sqlite3
+  pool: 5
+  timeout: 5000
+
+# production:
+#     adapter: postgresql
+#     encoding: unicode
+#     pool: 5
+#     database: moviesst_rentailP
+#     username: moviesst
+#     password: Zabvio2013#%!
+#     host: box366.bluehost.com
+#     port: 5432
+
+
 
 
 
