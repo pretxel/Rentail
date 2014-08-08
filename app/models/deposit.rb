@@ -71,12 +71,12 @@ class Deposit < ActiveRecord::Base
 			logger.warn "No es una imagen"
 		end
 
-		if Rails.env.production?
-			fileObject = File.new("#{photo_filename}", "r")
-			# upload files to nested directory
-			Net::FTP.open(CONTENT_SERVER_DOMAIN_NAME, CONTENT_SERVER_FTP_LOGIN, CONTENT_SERVER_FTP_PASSWORD) do |ftp|
-			  ftp.putbinaryfile(fileObject, "/rails_apps/store_images/#{File.basename(fileObject)}")
-			end
-		end
+		# if Rails.env.production?
+		# 	fileObject = File.new("#{photo_filename}", "r")
+		# 	# upload files to nested directory
+		# 	Net::FTP.open(CONTENT_SERVER_DOMAIN_NAME, CONTENT_SERVER_FTP_LOGIN, CONTENT_SERVER_FTP_PASSWORD) do |ftp|
+		# 	  ftp.putbinaryfile(fileObject, "/rails_apps/store_images/#{File.basename(fileObject)}")
+		# 	end
+		# end
 	end
 end
