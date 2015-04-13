@@ -1,30 +1,10 @@
-# encoding: utf-8
 class DepositsController < ApplicationController
   before_action :set_deposit, only: [:show, :edit, :update, :destroy]
-  before_action :set_pag, only: [:next, :index]
-
-  @@count = 0
 
   # GET /deposits
   # GET /deposits.json
   def index
-
-    logger.info "entrada pa #{@pag}"
-
-    offs = @pag.to_i * 5;
-
-    @deposits = Deposit.limit(5).offset(offs)
-    @deposits2 = Deposit.all
-
-    @paginas = @deposits2.size / 5
-    if @deposits2.size % 5 != 0  
-         @paginas += 1
-    end
-    logger.info "Siguiente pagina : #{offs}"
-    logger.info "TAMAÑO lista : #{@paginas}"
-
-
-
+    @deposits = Deposit.all
   end
 
   # GET /deposits/1
@@ -45,16 +25,16 @@ class DepositsController < ApplicationController
   # POST /deposits.json
   def create
     @deposit = Deposit.new(deposit_params)
-  
-      respond_to do |format|
-        if @deposit.save
-          format.html { redirect_to @deposit, notice: t("deposit_created") }
-          format.json { render action: 'show', status: :created, location: @deposit }
-        else
-          format.html { render action: 'new' }
-          format.json { render json: @deposit.errors, status: :unprocessable_entity }
-        end
+
+    respond_to do |format|
+      if @deposit.save
+        format.html { redirect_to @deposit, notice: 'Deposit was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @deposit }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @deposit.errors, status: :unprocessable_entity }
       end
+    end
   end
 
   # PATCH/PUT /deposits/1
@@ -87,13 +67,8 @@ class DepositsController < ApplicationController
       @deposit = Deposit.find(params[:id])
     end
 
-    def set_pag
-      @pag = params[:pag]
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def deposit_params
-      params.require(:deposit).permit(:nombre, :monto, :fecha, :photo)
+      params.require(:deposit).permit(:monto, :fecha, :date)
     end
-
 end

@@ -1,1 +1,1 @@
-json.extract! @deposit, :id, :id, :nombre, :monto, :fecha, :created_at, :updated_at
+json.extract! @deposit, :id, :monto, :fecha, :date, :created_at, :updated_at

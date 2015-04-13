@@ -1,63 +1,31 @@
-<%- model_class = Deposit -%>
-<div class="hero-unit">
-  <h1><%=t '.title', :default => t("deposit") %></h1>
-  <p><%=t '.title', :default => t("description_deposit") %></p>
-  <p>
-    
-      <%= link_to t('.new', :default => t("helpers.links.nuevoDeposito")),
-            new_deposit_path,
-            :class => 'btn btn-info btn-large', :alt=>'Nuevo', :title=>'Nuevo'%>
-    
-  </p>
-</div>
+<h1>Listing deposits</h1>
 
- <% if user_signed_in? %>
-<table class="table table-striped">
+<table>
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:nombre) %></th>
-      <th><%= model_class.human_attribute_name(:monto) %></th>
-      <th><%= model_class.human_attribute_name(:fecha) %></th>
-      <!-- <th><%= model_class.human_attribute_name(:created_at) %></th> -->
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th>Monto</th>
+      <th>Fecha</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
+
   <tbody>
     <% @deposits.each do |deposit| %>
       <tr>
-<!--         <td><%= link_to deposit.id, deposit_path(deposit) %></td> -->
-        <td><%= deposit.id %></td>
-        <td><%= deposit.nombre %></td>
-        <td>$<%= deposit.monto %></td>
+        <td><%= deposit.monto %></td>
         <td><%= deposit.fecha %></td>
-     
-             <td>
-          <%= link_to t('.ver', :default => t("helpers.links.show")),
-                      deposit_path(deposit), :class => 'btn btn-success btn-mini' %>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_deposit_path(deposit), :class => 'btn btn-warning btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      deposit_path(deposit),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => '¿Estas seguro?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-          
-        </td>
+        <td><%= deposit.date %></td>
+        <td><%= link_to 'Show', deposit %></td>
+        <td><%= link_to 'Edit', edit_deposit_path(deposit) %></td>
+        <td><%= link_to 'Destroy', deposit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<div class="pagination pagination-centered">
-  <ul>
-    <li><a href="/deposits/?pag=0">Primero</a></li>
-    <% $i=1 
-    while $i <= @paginas %>
-    <li><a href="/deposits/?pag=<%= $i - 1 %>"><%= $i %></a></li>
-    <%
-     $i += 1
-     end %>
-    <li><a href="/deposits/?pag=<%= $i - 2 %>">Ultimo</a></li>
-  </ul>
-</div>
-<% end %>
+
+<br>
+
+<%= link_to 'New Deposit', new_deposit_path %>

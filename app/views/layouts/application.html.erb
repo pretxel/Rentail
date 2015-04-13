@@ -61,16 +61,16 @@
               <% if user_signed_in? %>
                 <li>
                   <div class="btn-group">
-  <a class="btn btn-info" href="#"><i class="icon-user icon-white"></i> User</a>
-  <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-  <ul class="dropdown-menu">
-    <li><a href="#"><i class="icon-pencil"></i> Editar</a></li>
-    <li class="divider"></li>
-    <li><a data-method="delete" href="/users/sign_out"><i class="icon-off"></i> Cerrar Sesión</a></li>
-  </ul>
-</div>
+                    <a class="btn btn-info" href="#"><i class="icon-user icon-white"></i> User</a>
+                    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#"><i class="icon-pencil"></i> Editar</a></li>
+                      <li class="divider"></li>
+                      <li><a data-method="delete" href="/users/sign_out"><i class="icon-off"></i> Cerrar Sesión</a></li>
+                    </ul>
+                  </div>
                </li>
-                <!-- <li><%= link_to t("logout") , destroy_user_session_path, method: :delete  %></li> -->
+                
               <% else %>
               <li><%= link_to t("signin") , new_user_session_path  %></li>
               <% end %>

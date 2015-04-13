@@ -18,7 +18,7 @@ class DepositsControllerTest < ActionController::TestCase
 
   test "should create deposit" do
     assert_difference('Deposit.count') do
-      post :create, deposit: { fecha: @deposit.fecha, id: @deposit.id, monto: @deposit.monto, nombre: @deposit.nombre }
+      post :create, deposit: { date: @deposit.date, fecha: @deposit.fecha, monto: @deposit.monto }
     end
 
     assert_redirected_to deposit_path(assigns(:deposit))
@@ -35,7 +35,7 @@ class DepositsControllerTest < ActionController::TestCase
   end
 
   test "should update deposit" do
-    patch :update, id: @deposit, deposit: { fecha: @deposit.fecha, id: @deposit.id, monto: @deposit.monto, nombre: @deposit.nombre }
+    patch :update, id: @deposit, deposit: { date: @deposit.date, fecha: @deposit.fecha, monto: @deposit.monto }
     assert_redirected_to deposit_path(assigns(:deposit))
   end
 

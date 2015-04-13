@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+gem "haml"
+gem 'mongoid', github: 'mongoid/mongoid'
+gem 'bson_ext'
+gem 'protected_attributes'
+
 #Bundle mysql 
 # gem "mysql2"
 

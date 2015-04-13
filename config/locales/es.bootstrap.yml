@@ -16,3 +16,5 @@ es:
       save: "Guardar Comprobante"
       new: "Agregar Comprobante"
       delete: "Borrar Comprobante"
+    users:
+      new: "Agregar Nuevo Usuario" 

@@ -1,12 +1,12 @@
 Rentail::Application.routes.draw do
+  resources :deposits
+
   devise_for :users
   get "welcome/index"
 
   resources :roles
 
   resources :users
-
-  resources :deposits
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -16,6 +16,11 @@ Rentail::Application.routes.draw do
   #get 'deposits/next/:id' => 'deposits#next'
    get 'deposits/?pag=:pag' => 'deposits#index'  
    
+   # get 'testMongo' , to: 'mongo#mongoCon'
+
+   # get 'auth/sign_up' => 'auth#signup'
+   # get 'auth/sign_in' => 'auth#signin'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

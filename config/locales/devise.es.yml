@@ -55,3 +55,19 @@ es:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+  mongoid:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "You have to give me your e-mail address"
+              not_found: "e-mail address not found in list of members"
+            password:
+              blank: "You have to give me your password"
+              not_found: "password not found in list of members"
+              
+    attributes:
+      user:
+        email: "Email address"
+        name: "Your nickname"

@@ -20,5 +20,7 @@ module Rentail
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :es
     I18n.enforce_available_locales = false
+    config.mongoid.logger = Logger.new($stdout, :warn)
+    config.mongoid.preload_models = false
   end
 end
