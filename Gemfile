@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+gem 'momentjs-rails', '>= 2.8.1'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 gem "haml"
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'

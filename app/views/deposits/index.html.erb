@@ -1,14 +1,20 @@
-<h1>Listing deposits</h1>
 
-<table>
+<div class="col-md-12">
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><h4>Depositos</h4></div>
+  <div class="panel-body">
+ 
+
+<table class="table">
   <thead>
     <tr>
       <th>Monto</th>
       <th>Fecha</th>
-      <th>Date</th>
+      
       <th></th>
       <th></th>
-      <th></th>
+      
     </tr>
   </thead>
 
@@ -17,10 +23,10 @@
       <tr>
         <td><%= deposit.monto %></td>
         <td><%= deposit.fecha %></td>
-        <td><%= deposit.date %></td>
-        <td><%= link_to 'Show', deposit %></td>
-        <td><%= link_to 'Edit', edit_deposit_path(deposit) %></td>
-        <td><%= link_to 'Destroy', deposit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <td><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><%= link_to ' Ver', deposit %></td>
+        <!-- <td><%= link_to 'Edit', edit_deposit_path(deposit) %></td> -->
+        <!-- <td><%= link_to 'Destroy', deposit, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +34,9 @@
 
 <br>
 
-<%= link_to 'New Deposit', new_deposit_path %>
+<%= link_to 'Nuevo Deposito', new_deposit_path %>
+  </div>
+</div>
+</div>
+
+

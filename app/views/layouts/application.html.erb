@@ -53,7 +53,7 @@
               <% if user_signed_in? %>
               <div class="navbar-text">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                ¡Hola! <% user_session %>
+                ¡Hola! <%= current_user.email %>
               </div>
             <% end %>
             </li>
@@ -125,22 +125,13 @@
     </div> -->
     <div class="container">
         <div class="row">
-          
-          <div class="col-md-6 col-md-offset-3">
-            <%= bootstrap_flash %>
-            <%= yield %>
-
-          </div>
-          
-            
-          
-         
-          
+          <%= bootstrap_flash %>
+          <%= yield %>
         </div><!--/row-->
-
-      
-
     </div> <!-- /container -->
+
+
+
     <footer>
         <p>&copy; Rentail 2014</p>
       </footer>

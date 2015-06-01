@@ -5,7 +5,7 @@ class DepositsController < ApplicationController
   # GET /deposits
   # GET /deposits.json
   def index
-    @deposits = Deposit.all
+    @deposits = Deposit.where(user: current_user.email).order(fecha: :asc)
   end
 
   # GET /deposits/1
@@ -26,6 +26,7 @@ class DepositsController < ApplicationController
   # POST /deposits.json
   def create
     @deposit = Deposit.new(deposit_params)
+    @deposit.user = current_user.email
 
     respond_to do |format|
       if @deposit.save
@@ -70,6 +71,6 @@ class DepositsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def deposit_params
-      params.require(:deposit).permit(:monto, :fecha, :date)
+      params.require(:deposit).permit(:monto, :fecha, :photo)
     end
 end

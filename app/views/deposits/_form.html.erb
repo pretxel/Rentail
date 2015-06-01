@@ -15,15 +15,45 @@
     <%= f.label :monto %><br>
     <%= f.number_field :monto %>
   </div>
-  <div class="field">
-    <%= f.label :fecha %><br>
-    <%= f.text_field :fecha %>
+
+
+  <div class="row">
+    <div class="col-sm-6" style="height:130px;">
+      <label class="form-group">Fecha</label>
+        <div class="form-group">
+            <div class='input-group date' id='datetimepicker10'>
+                <input type='text' class="form-control" name="deposit[fecha]" id="deposit_fecha" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar">
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+   <div class="col-sm-6">
+    <div class="actions">
+    <button class="btn btn-large btn-primary" type="submit">Aceptar</button>
   </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.text_field :date %>
+   </div>
+     </div>
+
+   <div class="field">
+    <%= f.label :photo %><br>
+    <%= f.file_field :photo %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+  
+   <script type="text/javascript">
+        $(function () {
+            var date = new Date()
+            $('#datetimepicker10').datetimepicker({
+                viewMode: 'days',
+                format: 'DD/MM/YYYY',
+                defaultDate: date,
+                showTodayButton: true
+            });
+        });
+    </script>
 <% end %>
