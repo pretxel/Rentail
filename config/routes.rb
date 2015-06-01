@@ -1,7 +1,9 @@
 Rentail::Application.routes.draw do
+  devise_for :users, controllers: { sessions: "users/sessions" }
+  
+
   resources :deposits
 
-  devise_for :users
   get "welcome/index"
 
   resources :roles

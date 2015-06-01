@@ -8,12 +8,14 @@ gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
 gem 'protected_attributes'
 
+gem 'omniauth', '~> 1.2.2'
+
 #Bundle mysql 
 # gem "mysql2"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.2.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -37,7 +39,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 #Devise
-gem "devise", '3.0.0'
+gem "devise", '>= 3.0.0'
 
 
 group :doc do

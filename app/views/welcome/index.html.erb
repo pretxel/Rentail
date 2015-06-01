@@ -1,40 +1,19 @@
-<% if Rails.env.development? %>
-  <h2>Desarrollo</h2>
-<% end %>
-
-
-<div class="row">
-  <div class="span4">Rentail</div>
-  <div class="span6">Caracteristicas</div>
-</div>
-
-<div id="myCarousel" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-<!--     <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li> -->
-  </ol>
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-    <div class="active item">
-    	
-      <div class="hero-unit">
-  <img src="/images/dash.png">
-  <p>
-    <a class="btn btn-info btn-large">
-      Tutorial
-    </a>
-  </p>
-</div>
 
 
 
-    </div>
- <!--    <div class="item">
-      <img src="images/dinero.jpeg"> 
-	</div> -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <form class="form-signin">
+
+
+        <h2 class="form-signin-heading">Inicia Sesión</h2>
+        <input type="text" class="input-block-level" placeholder="Email address">
+        <input type="password" class="input-block-level" placeholder="Password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Recordar
+        </label>
+        <button class="btn btn-large btn-primary" type="submit">Acceder</button>
+      </form>
   </div>
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 </div>
+

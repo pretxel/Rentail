@@ -1,18 +1,16 @@
-class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
-
+class User
   include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
+
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :timeoutable
+ devise :database_authenticatable, :registerable, :recoverable
 
   ## Database authenticatable
-  field :email,              :type => String
-  field :encrypted_password, :type => String
+  field :email,              :type => String, :default => ""
+  field :encrypted_password, :type => String, :default => ""
   
   ## Recoverable
   field :reset_password_token,   :type => String
@@ -29,21 +27,18 @@ class User < ActiveRecord::Base
   field :last_sign_in_ip,    :type => String
 
   ## Confirmable
-  field :confirmation_token,   :type => String
-  field :confirmed_at,         :type => Time
-  field :confirmation_sent_at, :type => Time
-  field :unconfirmed_email,    :type => String # Only if using reconfirmable
+  # field :confirmation_token,   :type => String
+  # field :confirmed_at,         :type => Time
+  # field :confirmation_sent_at, :type => Time
+  # field :unconfirmed_email,    :type => String # Only if using reconfirmable
 
   ## Lockable
-  field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts
-  field :unlock_token,    :type => String # Only if unlock strategy is :email or :both
-  field :locked_at,       :type => Time
+  # field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts
+  # field :unlock_token,    :type => String # Only if unlock strategy is :email or :both
+  # field :locked_at,       :type => Time
 
   ## Token authenticatable
   field :authentication_token, :type => String
-  include Mongoid::Attributes::Dynamic
-  store_in collection: 'user', database: 'rentail_development'
 
-  	
-  	
+  field :user, :type => String
 end
