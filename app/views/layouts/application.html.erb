@@ -35,6 +35,7 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
     <%= javascript_include_tag "application" %>
+    
   </head>
   <body>
 
@@ -49,6 +50,12 @@
           
 
           <ul class="nav navbar-nav navbar-right">
+            <% if Rails.env.development? %>
+                 <li>
+                <span class="label label-info"> Modo Desarrollo</span>
+                </li>
+            <% end %>  
+
             <li>
               <% if user_signed_in? %>
               <div class="navbar-text">
@@ -57,15 +64,7 @@
               </div>
             <% end %>
             </li>
-                 <% if Rails.env.development? %>
-                 <li>
-                  <div class="navbar-text">
-                    Modo Desarrollo
-                </div>
-                </li>
-                <!-- <li><%= link_to t("signin") , new_user_session_path  %></li> -->
-              <% end %>
-
+                
               <% if user_signed_in? %>
               <li><a data-method="delete" href="/users/sign_out"><i class="icon-off"></i> Cerrar Sesión</a></li>
               <% else %>

@@ -1,0 +1,13 @@
+es:
+  mongoid:
+    errors:
+      models:
+        deposit:
+          attributes:
+            monto:
+              blank: "esta Vacio"
+              not_a_number: "no es un número"
+            fecha:
+              blank: "esta Vacio"	
+            extension:
+              blank: "esta Vacio"										

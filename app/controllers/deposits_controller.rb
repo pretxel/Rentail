@@ -1,3 +1,4 @@
+require 'net/http'
 class DepositsController < ApplicationController
   before_action :set_deposit, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
@@ -27,6 +28,27 @@ class DepositsController < ApplicationController
   def create
     @deposit = Deposit.new(deposit_params)
     @deposit.user = current_user.email
+
+    if request.POST.include? "g-recaptcha-response"
+      #gresponse = request.get_fields('g-recaptcha-response')
+
+
+      uri = URI('http://www.google.com/recaptcha/api/siteverify')
+      req = Net::HTTP::Post.new(uri)
+      req.set_form_data('secret' => '6Lc6qgcTAAAAAO9dAM1kaHvyI3UNoOYDHkI-olJY', 'response' => params["g-recaptcha-response"])
+
+      res = Net::HTTP.start(uri.hostname, uri.port) do |http|
+        http.request(req)
+      end
+      logger.info "RESPUESTA_POST_1 : #{res.body}"
+      # url = URI.parse('https://www.google.com/recaptcha/api/siteverify')
+      # req = Net::HTTP::Post.new(url.to_s)
+      # res = Net::HTTP.start(url.host, url.port) {|http|
+      #   response =  http.post('/cgi-bin/search.rb', 'query='.gresponse)
+      # }
+      # logger.info "RESPUESTA_POST : #{res.body}"
+
+    end
 
     respond_to do |format|
       if @deposit.save
@@ -71,6 +93,6 @@ class DepositsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def deposit_params
-      params.require(:deposit).permit(:monto, :fecha, :photo)
+      params.require(:deposit).permit(:monto, :fecha, :photo, "g-recaptcha-response")
     end
 end

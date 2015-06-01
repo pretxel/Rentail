@@ -1,11 +1,16 @@
 class Deposit
   include Mongoid::Document
   include Mongoid::Attributes::Dynamic
-  field :monto, type: Integer
-  field :fecha, type: String
-  field :date, type: String
+  field :monto, :type => Integer
+  field :fecha, :type => String
   field :user, :type => String
   field :extension, :type => String
+  field :path_img, :type => String
+
+  validates :monto, presence: true, numericality: true
+  validates :fecha, presence: true
+  validates :extension, presence: true
+
 
 
     validates_format_of :photo, :with => %r{\.(png|jpg|jpeg|bmp)$}i, :message => "Inserta una imagen", :on => :save, :multiline => true
@@ -71,6 +76,8 @@ class Deposit
 
 				
 				logger.info "SIZE : #{@file_data.size}"
+				self.path_img =  photo_filename
+
 
 				File.open(photo_filename,'wb') do |f|
 					f.write(@file_data.read)
