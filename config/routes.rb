@@ -1,5 +1,5 @@
 Rentail::Application.routes.draw do
-  devise_for :users, controllers: { sessions: "users/sessions" }
+  devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations", passwords: "users/passwords" }, views: { mailer: "users/mailer"}
   
 
   resources :deposits

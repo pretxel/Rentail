@@ -29,6 +29,10 @@ class DepositsController < ApplicationController
     @deposit = Deposit.new(deposit_params)
     @deposit.user = current_user.email
 
+    mes = @deposit.fecha.split("/")
+    @deposit.mes = mounth_insert(mes[1])
+    
+
     if request.POST.include? "g-recaptcha-response"
       #gresponse = request.get_fields('g-recaptcha-response')
 
@@ -95,4 +99,25 @@ class DepositsController < ApplicationController
     def deposit_params
       params.require(:deposit).permit(:monto, :fecha, :photo, "g-recaptcha-response")
     end
+
+    def mounth_insert(num_mounth)
+      if num_mounth == "01"
+        mes = "Enero"
+      elsif num_mounth == "02"
+        mes = "Febrero"
+      elsif num_mounth == "03"
+        mes = "Marzo"
+      elsif num_mounth == "04"
+        mes = "Abril"
+      elsif num_mounth == "05"
+        mes = "Mayo"
+      elsif num_mounth == "06"
+        mes = "Junio"
+      elsif num_mounth == "07"
+        mes = "Julio"
+      elsif num_mounth == "07"
+        mes = "Agosto"
+      end 
+    end
+
 end

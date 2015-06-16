@@ -68,7 +68,7 @@ Rentail::Application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
-  config.i18n.fallbacks = true
+config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
@@ -81,12 +81,15 @@ Rentail::Application.configure do
 
   config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 
-  config.action_mailer.default_url_options = {:host => 'localhost:3000'}
-config.action_mailer.delivery_method = :smtp
-config.action_mailer.smtp_settings = {
-  :address => "mail.zabvio.com",
-  :port    => 26,
-  :domain  => 'zabvio.com'
-}
+  config.action_mailer.default_url_options = { host: 'rentail.co' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.mandrillapp.com",
+    :port    => 587,
+    :user_name => "pretxel100@gmail.com",
+    :password => "0N50u_oBJNNJTwNo8BjH3g",
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :authentication => 'login',
+  }
 
 end

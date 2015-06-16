@@ -6,7 +6,11 @@ class User
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
- devise :database_authenticatable, :registerable, :recoverable
+  devise :database_authenticatable, :registerable, :recoverable
+
+
+  validates :email, presence: true
+  validates :password, presence: true
 
   ## Database authenticatable
   field :email,              :type => String, :default => ""
@@ -28,7 +32,7 @@ class User
 
   ## Confirmable
   # field :confirmation_token,   :type => String
-  # field :confirmed_at,         :type => Time
+  #  field :confirmed_at,         :type => Time
   # field :confirmation_sent_at, :type => Time
   # field :unconfirmed_email,    :type => String # Only if using reconfirmable
 

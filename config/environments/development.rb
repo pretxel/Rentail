@@ -29,6 +29,14 @@ Rentail::Application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {:address => "localhost", :port => 1025}
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.mandrillapp.com",
+    :port    => 587,
+    :user_name => "pretxel100@gmail.com",
+    :password => "0N50u_oBJNNJTwNo8BjH3g",
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :authentication => 'login',
+  }
+
 
 end

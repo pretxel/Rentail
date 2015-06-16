@@ -1,31 +1,31 @@
 
 <div class="col-md-12">
 
-<div class="panel panel-primary">
-  <div class="panel-heading"><h4>Deposito</h4></div>
-  <div class="panel-body">
+	<div class="panel panel-primary">
+		<div class="panel-heading"><h4>Deposito</h4></div>
+		<div class="panel-body">
 
-<p id="notice"><%= notice %></p>
+			
 
-<p>
-  <strong>Monto:</strong>
-  <%= @deposit.monto %>
-</p>
+			<p>
+				<strong>Monto:</strong>
+				<%= @deposit.monto %>
+			</p>
 
-<p>
-  <strong>Fecha:</strong>
-  <%= @deposit.fecha %>
-</p>
+			<p>
+				<strong>Fecha:</strong>
+				<%= @deposit.fecha %>
+			</p>
 
-<p>
-	<%= image_tag @deposit.photo_path, width: "400px" %>
-</p>
+			<p>
+				<%= image_tag @deposit.photo_path, width: "400px" %>
+			</p>
 
 
 
-<!-- <%= link_to 'Editar', edit_deposit_path(@deposit) %> | -->
+			<!-- <%= link_to 'Editar', edit_deposit_path(@deposit) %> | -->
 
-<a href=<%= deposits_path %> class="btn btn-primary" role="button"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true" style="color: white;"> Regresar</span></a>
-</div>
-</div>
+			<a href=<%= deposits_path %> class="btn btn-primary" role="button"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true" style="color: white;"> Regresar</span></a>
+		</div>
+	</div>
 </div>

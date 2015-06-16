@@ -1,28 +1,18 @@
 <%= form_for(@deposit) do |f| %>
-  <% if @deposit.errors.any? %>
+<% if @deposit.errors.any? %>
+<div class="alert alert-danger" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <% @deposit.errors.full_messages.each do |msg| %>
 
-    
-     
-      
-       
-        <div class="alert alert-danger" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <% @deposit.errors.full_messages.each do |msg| %>
-            
 
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span>
-            <%= msg %><br>
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span>
+  <%= msg %><br>
 
-           <% end %>
+  <% end %>
 
-           
-        </div>
-      
-    
 
-    
-
+</div>
 
     <!-- <div id="error_explanation" class="panel panel-primary">
       <h2><%= pluralize(@deposit.errors.count, "error") %> al guardar el depsosito:</h2>
@@ -36,77 +26,72 @@
       <% end %>
       </ul>
     </div> -->
-  <% end %>
+    <% end %>
 
-  <div class="row">
-    <div class="col-sm-6">
-    <label class="form-group" >Monto</label><br>
-    <input type='text' class="form-control" name="deposit[monto]" id="deposit_monto" /><br>
-    <label class="form-group">Fecha</label>
+    <div class="row">
+      <div class="col-sm-6">
+        <label class="form-group">Monto</label><br>
+        <input type='text' class="form-control" name="deposit[monto]" id="deposit_monto" /><br>
+        <label class="form-group">Fecha</label>
         <div class="form-group">
-            <div class='input-group date' id='datetimepicker10'>
-                <input type='text' class="form-control" name="deposit[fecha]" id="deposit_fecha" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar">
-                    </span>
-                </span>
-            </div>
+          <div class='input-group date' id='datetimepicker10'>
+            <input type='text' class="form-control" name="deposit[fecha]" id="deposit_fecha" />
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar">
+              </span>
+            </span>
+          </div>
         </div>
-    <label class="form-group">Foto de Recibo</label><br>
-      <%= f.file_field :photo %><br>
-     
+        <label class="form-group">Foto de Recibo</label><br>
+        <%= f.file_field :photo %><br>
 
-      <div class="g-recaptcha" data-sitekey="6Lc6qgcTAAAAAIzcW0SnwnAyy_Wduisj8KvVjaSY"></div>
+
+        <div class="g-recaptcha" data-sitekey="6Lc6qgcTAAAAAIzcW0SnwnAyy_Wduisj8KvVjaSY"></div>
+
+      </div>
+      <div class="col-sm-6">
+        <center><output id="list" class="col-sm-12">
+          <%= image_tag "/photo_dep/no_image_1.png", class: "col-sm-12" %>
+        </output></center>
+      </div>
+
+
+      <div class="col-sm-6 col-md-offset-6">
+        <div class="actions">
+          <button class="btn btn-success btn-lg btn-block" type="submit">Aceptar</button>
+        </div> 
+      </div>
 
     </div>
-    <div class="col-sm-6">
-      <center><output id="list" class="col-sm-12">
-        <%= image_tag "/photo_dep/no_image_1.png", class: "col-sm-12" %>
-      </output></center>
-    </div>
-
-
-    <div class="col-sm-6 col-md-offset-6">
-      <div class="actions">
-    <button class="btn btn-success btn-lg btn-block" type="submit">Aceptar</button>
-  </div> 
-    </div>
-
-  </div>
-
-
-  
-   <script type="text/javascript">
-        $(function () {
-            var date = new Date()
-            $('#datetimepicker10').datetimepicker({
-                viewMode: 'days',
-                format: 'DD/MM/YYYY',
-                defaultDate: date,
-                showTodayButton: true
-            });
 
 
 
+    <script type="text/javascript">
+    $(function () {
+      var date = new Date()
+      $('#datetimepicker10').datetimepicker({
+        viewMode: 'days',
+        format: 'DD/MM/YYYY',
+        defaultDate: date,
+        showTodayButton: true
+      });
+    });
 
 
-        });
-
-
-        function archivo(evt) {
+    function archivo(evt) {
       var files = evt.target.files; // FileList object
        
         //Obtenemos la imagen del campo "file". 
       for (var i = 0, f; f = files[i]; i++) {         
            //Solo admitimos imágenes.
            if (!f.type.match('image.*')) {
-                continue;
+                  continue;
            }
        
            var reader = new FileReader();
            
            reader.onload = (function(theFile) {
-               return function(e) {
+                 return function(e) {
                // Creamos la imagen.
                       document.getElementById("list").innerHTML = ['<img class="thumb col-sm-12" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
                };
@@ -114,14 +99,10 @@
  
            reader.readAsDataURL(f);
        }
-}
+    }
              
       document.getElementById('deposit_photo').addEventListener('change', archivo, false);
-
-
-  
-
-    </script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+</script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
 <% end %>

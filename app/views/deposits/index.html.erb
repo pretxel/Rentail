@@ -1,42 +1,38 @@
-
 <div class="col-md-12">
+  <div class="panel panel-primary">
+    <div class="panel-heading"><h4>Depositos</h4></div>
+    <div class="panel-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Monto</th>
+            <th>Fecha</th>
 
-<div class="panel panel-primary">
-  <div class="panel-heading"><h4>Depositos</h4></div>
-  <div class="panel-body">
- 
+            <th>Mes</th>
+            <th>Acciones</th>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Monto</th>
-      <th>Fecha</th>
-      
-      <th></th>
-      <th></th>
-      
-    </tr>
-  </thead>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @deposits.each do |deposit| %>
-      <tr>
-        <td><%= deposit.monto %></td>
-        <td><%= deposit.fecha %></td>
-        
-        <td><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><%= link_to ' Ver', deposit %></td>
-        <!-- <td><%= link_to 'Edit', edit_deposit_path(deposit) %></td> -->
-        <!-- <td><%= link_to 'Destroy', deposit, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @deposits.each do |deposit| %>
+          <tr>
+            <td><%= deposit.monto %></td>
+            <td><%= deposit.fecha %></td>
+            <td><span class="label label-success" style="font-size: 90%;"><%= deposit.mes %></span></td>
 
-<br>
+            <td><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><%= link_to ' Ver', deposit %></td>
+            <!-- <td><%= link_to 'Edit', edit_deposit_path(deposit) %></td> -->
+            <!-- <td><%= link_to 'Destroy', deposit, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-<%= link_to 'Nuevo Deposito', new_deposit_path %>
+      <br>
+      <a href=<%=new_deposit_path%>><button class="btn btn-info btn-lg btn-block" type="submit">Nuevo Deposito</button></a>
+    </div>
   </div>
-</div>
 </div>
 
 

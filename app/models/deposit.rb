@@ -4,6 +4,7 @@ class Deposit
   field :monto, :type => Integer
   field :fecha, :type => String
   field :user, :type => String
+  field :mes, :type => String
   field :extension, :type => String
   field :path_img, :type => String
 
