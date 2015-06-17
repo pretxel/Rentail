@@ -125,8 +125,7 @@ class DepositsController < ApplicationController
         mes = "Noviembre"
       elsif num_mounth == "12"
         mes = "Diciembre"
-      end 
-      end 
+      end  
     end
 
 end
