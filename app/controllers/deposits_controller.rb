@@ -115,8 +115,17 @@ class DepositsController < ApplicationController
         mes = "Junio"
       elsif num_mounth == "07"
         mes = "Julio"
-      elsif num_mounth == "07"
+      elsif num_mounth == "08"
         mes = "Agosto"
+      elsif num_mounth == "09"
+        mes = "Septiembre"
+      elsif num_mounth == "10"
+        mes = "Octubre"
+      elsif num_mounth == "11"
+        mes = "Noviembre"
+      elsif num_mounth == "12"
+        mes = "Diciembre"
+      end 
       end 
     end
 
