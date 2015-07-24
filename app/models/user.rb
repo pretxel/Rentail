@@ -13,9 +13,10 @@ class User
   validates :password, presence: true
 
   ## Database authenticatable
+  field :role,              :type => Integer, :default => 0
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
-  
+
   ## Recoverable
   field :reset_password_token,   :type => String
   field :reset_password_sent_at, :type => Time

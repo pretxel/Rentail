@@ -6,7 +6,12 @@ class DepositsController < ApplicationController
   # GET /deposits
   # GET /deposits.json
   def index
-    @deposits = Deposit.where(user: current_user.email).order(fecha: :asc)
+
+    if (current_user.role == 1)
+      @deposits = Deposit.all
+    else
+      @deposits = Deposit.where(user: current_user.email).order(fecha: :asc)
+    end
   end
 
   # GET /deposits/1
@@ -31,7 +36,7 @@ class DepositsController < ApplicationController
 
     mes = @deposit.fecha.split("/")
     @deposit.mes = mounth_insert(mes[1])
-    
+
 
     if request.POST.include? "g-recaptcha-response"
       #gresponse = request.get_fields('g-recaptcha-response')
@@ -125,7 +130,7 @@ class DepositsController < ApplicationController
         mes = "Noviembre"
       elsif num_mounth == "12"
         mes = "Diciembre"
-      end  
+      end
     end
 
 end
