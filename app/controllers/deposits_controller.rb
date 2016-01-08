@@ -23,6 +23,7 @@ class DepositsController < ApplicationController
   # GET /deposits/new
   def new
     @deposit = Deposit.new
+    @deposit.hash = ""
   end
 
   # GET /deposits/1/edit

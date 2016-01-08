@@ -47,11 +47,10 @@
 
 
         <div class="g-recaptcha" data-sitekey="6Lc6qgcTAAAAAIzcW0SnwnAyy_Wduisj8KvVjaSY"></div>
-
       </div>
       <div class="col-sm-6">
         <center><output id="list" class="col-sm-12">
-          <% if @deposit.hash %>
+          <% if @deposit.hash? %>
             <%= image_tag "/photo_dep/"+@deposit.hash.to_s+"."+@deposit.extension, class: "col-sm-12" %>
           <% else %>
             <%= image_tag "/photo_dep/no_image_1.png", class: "col-sm-12" %>
