@@ -1,4 +1,5 @@
 require 'net/http'
+require 'digest'
 class DepositsController < ApplicationController
   before_action :set_deposit, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
@@ -36,7 +37,9 @@ class DepositsController < ApplicationController
 
     mes = @deposit.fecha.split("/")
     @deposit.mes = mounth_insert(mes[1])
-
+    md5 = Digest::MD5.new
+    md5.update @deposit.fecha.to_s
+    @deposit.hash = md5.hexdigest
 
     if request.POST.include? "g-recaptcha-response"
       #gresponse = request.get_fields('g-recaptcha-response')

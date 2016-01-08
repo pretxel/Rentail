@@ -5,6 +5,7 @@ class Deposit
   field :fecha, :type => String
   field :user, :type => String
   field :mes, :type => String
+  field :hash, :type => String
   field :extension, :type => String
   field :path_img, :type => String
 
@@ -34,11 +35,11 @@ class Deposit
 	end
 
 	def photo_filename
-		File.join FOTOS, "#{user}.#{extension}"
+		File.join FOTOS, "#{hash}.#{extension}"
 	end
 
 	def photo_path
-		"/photo_dep/#{user}.#{extension}"
+		"/photo_dep/#{hash}.#{extension}"
 	end
 
 	def has_photo?
