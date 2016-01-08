@@ -31,11 +31,11 @@
     <div class="row">
       <div class="col-sm-6">
         <label class="form-group">Monto</label><br>
-        <input type='text' class="form-control" name="deposit[monto]" id="deposit_monto" /><br>
+        <input type='text' class="form-control" name="deposit[monto]" id="deposit_monto" value=<%= @deposit.monto %> /><br>
         <label class="form-group">Fecha</label>
         <div class="form-group">
           <div class='input-group date' id='datetimepicker10'>
-            <input type='text' class="form-control" name="deposit[fecha]" id="deposit_fecha" />
+            <input type='text' class="form-control" name="deposit[fecha]" id="deposit_fecha" value=<%= @deposit.fecha %> />
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-calendar">
               </span>
@@ -51,7 +51,11 @@
       </div>
       <div class="col-sm-6">
         <center><output id="list" class="col-sm-12">
-          <%= image_tag "/photo_dep/no_image_1.png", class: "col-sm-12" %>
+          <% if @deposit.hash %>
+            <%= image_tag "/photo_dep/"+@deposit.hash.to_s+"."+@deposit.extension, class: "col-sm-12" %>
+          <% else %>
+            <%= image_tag "/photo_dep/no_image_1.png", class: "col-sm-12" %>
+          <% end %>
         </output></center>
       </div>
 
