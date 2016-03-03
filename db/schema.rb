@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140120222945) do
 
-  create_table "deposits", force: true do |t|
+  create_table "deposits", force: :cascade do |t|
     t.string   "nombre"
     t.string   "monto"
     t.date     "fecha"
@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 20140120222945) do
     t.string   "extension"
   end
 
-  create_table "roles", force: true do |t|
+  create_table "roles", force: :cascade do |t|
     t.string   "name"
     t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "user"
     t.string   "password"
     t.datetime "created_at"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20140120222945) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

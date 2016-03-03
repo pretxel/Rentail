@@ -22,7 +22,7 @@
         <div class="alert alert-danger" role="alert">
           <a href="#" class="alert-link"><%= msg %></a>
         </div>
-        
+
       <% end %>
       </ul>
     </div> -->
@@ -37,7 +37,7 @@
           <div class='input-group date' id='datetimepicker10'>
             <input type='text' class="form-control" name="deposit[fecha]" id="deposit_fecha" value=<%= @deposit.fecha %> />
             <span class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar">
+              <span class="fa fa-calendar">
               </span>
             </span>
           </div>
@@ -51,9 +51,9 @@
       <div class="col-sm-6">
         <center><output id="list" class="col-sm-12">
           <% if @deposit.hash? %>
-            <%= image_tag "/photo_dep/"+@deposit.hash.to_s+"."+@deposit.extension, class: "col-sm-12" %>
+            <%= image_tag "/photo_dep/"+@deposit.hash.to_s+"."+@deposit.extension, class: "col-sm-12 imgPhoto" %>
           <% else %>
-            <%= image_tag "/photo_dep/no_image_1.png", class: "col-sm-12" %>
+            <%= image_tag "/photo_dep/no_image_1.png", class: "col-sm-12 imgPhoto" %>
           <% end %>
         </output></center>
       </div>
@@ -62,7 +62,7 @@
       <div class="col-sm-6 col-md-offset-6">
         <div class="actions">
           <button class="btn btn-success btn-lg btn-block" type="submit">Aceptar</button>
-        </div> 
+        </div>
       </div>
 
     </div>
@@ -84,8 +84,8 @@
     function archivo(evt) {
       var files = evt.target.files; // FileList object
        
-        //Obtenemos la imagen del campo "file". 
-      for (var i = 0, f; f = files[i]; i++) {         
+        //Obtenemos la imagen del campo "file".
+      for (var i = 0, f; f = files[i]; i++) {        
            //Solo admitimos imágenes.
            if (!f.type.match('image.*')) {
                   continue;

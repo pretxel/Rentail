@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+gem "font-awesome-rails"
 gem 'momentjs-rails', '>= 2.8.1'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 gem "haml"
@@ -12,7 +13,7 @@ gem 'protected_attributes'
 
 gem 'omniauth', '~> 1.2.2'
 
-#Bundle mysql 
+#Bundle mysql
 # gem "mysql2"
 
 
@@ -50,7 +51,6 @@ group :doc do
 end
 
 group :production do
-  gem 'pg'
 
   gem 'unicorn'
 
